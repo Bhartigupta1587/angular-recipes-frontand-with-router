@@ -1,0 +1,22 @@
+<nav>
+  <div class="nav-wrapper">
+    <a class="brand-logo" routerLink="/login">Recipe App</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a routerLink="/categories">All Categories</a></li>
+
+      <span *ngIf="true">
+        <li><a routerLink="/signup">Sign Up</a></li>
+        <li><a routerLink="/login">Log In</a></li>
+      </span>
+      <span *ngIf="true">
+        <li><a routerLink="/logout">Log Out</a></li>
+        <li>Hello,</li>
+      </span>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
