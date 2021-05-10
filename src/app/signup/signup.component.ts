@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  public userName: string;
-  public emailAddress: string;
-  public password: string;
+  public userName: string| undefined;
+  public emailAddress: string| undefined;
+  public password: string| undefined;
 
 
   registerUser(): void {

@@ -15,6 +15,6 @@ export class UserService {
     console.log(newUser);
     this.http
       .post(`${herokuUrl}/auth/users/register`, newUser)
-      .subscribe(response => console.log(response),serr => console.log(err));
+      .subscribe(response => console.log(response), serr => console.log(serr));
   }
 }
