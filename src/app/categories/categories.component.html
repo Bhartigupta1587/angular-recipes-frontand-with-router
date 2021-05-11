@@ -1,1 +1,32 @@
-<p>categories works!</p>
+<section>
+  <!--  <h2>Get All Categories for {{this.emailAddress}}</h2>-->
+  <button (click)="getCategories()">Get All Categories</button>
+</section>
+
+<h4>Create New Category</h4>
+<form (submit)="createCategory()">
+  <input [(ngModel)]="categoryName" name="categoryName" type="text" placeholder="name" />
+  <input [(ngModel)]="categoryDescription" name="categoryDescription" type="text" placeholder="description" />
+  <input type="submit"/>
+</form>
+<section>
+  <button (click)="getCategories()">Get All Categories</button>
+</section>
+
+<div *ngIf="categories">
+  <h4>All Categories</h4>
+  <ul>
+    <li *ngFor="let category of categories">
+      {{category.name}} -- {{category.description}}
+      <button (click)="deleteCategory(category)">delete</button>
+      <ul>
+        <li *ngFor="let recipe of category.recipeList">
+          {{recipe.name}}
+      </ul>
+      <form (submit)="createRecipe(category)">
+        <input [(ngModel)]="recipeName" name="recipeName" type="text" placeholder="new recipe" />
+        <input type="submit"/>
+      </form>
+    </li>
+  </ul>
+</div>
